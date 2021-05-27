@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.cont{
+    width: 800px;
+    height: 300px;
+    border:2px solid black;
+    background-image: url("city.jpg");
+    background-size: 800px 330px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+    background-position: 0px 0px;
+}
+.bganim{
+    -webkit-animation: bgmove 3s linear infinite;
+    animation: bgmove 3s linear infinite;
+}
+@-webkit-keyframes bgmove {
+    0%{-webkit-background-position:0px 0px ;}
+    100%{-webkit-background-position: -800px 0px;}
+}
+@keyframes bgmove {
+    0%{background-position:0px 0px ;}
+    100%{background-position: -800px 0px;}
+}
+.jumper{
+    width:90px;
+    height:100px;
+    background-image: url("man.png");
+    background-size: 90px 100px;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left:50px;   
+}
+.jump{
+    animation: jump 1s linear;
+    animation-timing-function: ease-in-out;
+}
+@keyframes jump{
+    0%,100%{bottom:0px;}
+    50%,75%{bottom:150px; }
+
+}
+.obstacle{
+    width:60px;
+    height:60px;
+    position: absolute;
+    bottom:0;
+    right:0;   
+    background-image: url("corona.png");
+    background-size: 60px 60px;
+}
+.move{
+    animation: move 3s linear infinite;
+}
+@keyframes move{
+    0%{ right:0px;}
+    100%{right:850px;}
+}
+.play{
+    position: absolute;
+    height:50px;
+    width:50px;
+    border:none;
+    cursor: pointer;
+    top:0;
+    left:0;
+    outline: none;
+    background: transparent;
+}
+#pause{
+    display: none;
+}
+#play{
+    display: block;
+}
+.score{
+    height:50px;
+    width:150px;
+    position: absolute;
+    text-align: center;
+    top:20px;
+    left:300px;
+    font-weight: 700;
+    font-size:23px;
+}
+.mask{
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    border:1px solid black;
+    bottom: 30px;
+    right:-70px;
+    background-image: url("mask.png");
+    background-size: 70px 50px;
+}   
+.maskMove{
+    animation: maskMove 1s linear 1;
+}
+@keyframes maskMove {
+    0%{right:-70px;}
+    100%{right:800px;}
+    
+}
